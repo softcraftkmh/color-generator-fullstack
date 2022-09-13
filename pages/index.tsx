@@ -27,19 +27,20 @@ const Home = () => {
 						<div className="lds-dual-ring" />
 					</div>
 				) : (
-					<div className="grid grid-cols-5 h-full">
+					<div className="grid grid-cols-1 md:grid-cols-5 h-full">
 						{rgbColors.map((c, i) => (
 							<div className="flex flex-col" key={i}>
 								<>
-									<p className="text-center p-2 flex items-center justify-center whitespace-pre-wrap h-28 border-r-2">
-										{JSON.stringify(data.data[i]).replaceAll(",", ", ")}
-									</p>
 									<div
-										className="flex-grow"
+										className="flex-grow min-h-[220px] flex justify-center"
 										style={{
 											backgroundColor: `rgb(${c.red}, ${c.green}, ${c.blue})`,
 										}}
-									></div>
+									>
+										<p className="bg-slate-200 text-center p-2 flex items-center justify-center whitespace-pre-wrap h-28 border-r-2 mx-4 mt-4 rounded-xl shadow-lg">
+											{JSON.stringify(data.data[i]).replaceAll(",", ", ")}
+										</p>
+									</div>
 								</>
 							</div>
 						))}
