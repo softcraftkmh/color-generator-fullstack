@@ -5,6 +5,7 @@
 - Before installation, please install the node packages with `npm run install`.
 - For development, `npm run dev` to start the development process and visit `http://localhost:3000/`.
 - For production, `npm run build` to build and `npm run start` to start the production Next JS server.
+- Visit https://color-generator-fullstack.vercel.app/.
 
 ## Architecture
 
@@ -19,3 +20,12 @@
 ## Total Development Time
 
 - Around 3 and half hours
+
+## TODO
+
+- SEO Tags
+- Animations
+
+## Notice
+
+- The home page is not fully static generated because colors should not be pre rendered as they are randomly generated.
