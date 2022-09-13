@@ -12,4 +12,11 @@ export type HSLColor = {
 	lightness: string;
 };
 
-export type AppColor = RGBColor | HSLColor;
+export type BRGBColor = {
+	type: "brgb";
+	red: number;
+	green: number;
+	blue: number;
+};
+
+export type AppColor = RGBColor | HSLColor | BRGBColor;

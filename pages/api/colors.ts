@@ -14,7 +14,7 @@ export default function handler(
 ) {
 	const randomColors: AppColor[] = [...Array(5)].map(() => {
 		// can be extend for future possible color types
-		const randomInteger = generateRandomInteger(1);
+		const randomInteger = generateRandomInteger(2);
 		switch (randomInteger) {
 			// NOTE: for RGB
 			case 0: {
@@ -24,6 +24,11 @@ export default function handler(
 			case 1: {
 				const color = generateRandomRGBColor();
 				return convertFromRGBColor("hsl", color.red, color.green, color.blue);
+			}
+			// NOTE: for HSL
+			case 2: {
+				const color = generateRandomRGBColor();
+				return convertFromRGBColor("brgb", color.red, color.green, color.blue);
 			}
 			// NOTE: should not reach here
 			default: {
