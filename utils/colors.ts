@@ -1,5 +1,5 @@
 import Color from "color";
-import type { HSLColor, RGBColor } from "types/color";
+import type { AppColor, HSLColor, RGBColor } from "types/color";
 import { generateRandomInteger } from "utils/number";
 
 export const generateRandomRGBColor = (): RGBColor => {
@@ -32,6 +32,28 @@ export const convertFromRGBColor = (
 				hue: Math.floor(hue).toString(),
 				saturation: Math.floor(saturation).toString(),
 				lightness: Math.floor(lightness).toString(),
+			};
+		}
+	}
+};
+
+export const convertToRGBColor = (color: AppColor): RGBColor => {
+	switch (color.type) {
+		case "rgb": {
+			return color;
+		}
+		case "hsl": {
+			const hslColor = Color.hsl(
+				+color.hue,
+				+color.saturation,
+				+color.lightness
+			);
+			const [red, green, blue] = hslColor.rgb().array();
+			return {
+				type: "rgb",
+				red,
+				green,
+				blue,
 			};
 		}
 	}
